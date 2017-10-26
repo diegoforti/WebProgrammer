@@ -22,15 +22,15 @@
 //     alert('La suma es...... '  + (parseInt(number1) + parseInt(number2)))
 // }
 
-//Trabajo Practico - Calculadora
+//------------Trabajo Practico - Calculadora -------------
 
-number1 = prompt('Ingresa el primer número...')
+var number1 = prompt('Ingresa el primer número...')
 if (isNaN(parseInt(number1)))
     alert('No es un numero.....')
 
-operation =  prompt('Que operación desea realizar + - * /')
+var operation =  prompt('Que operación desea realizar + - * /')
 
-number2 = prompt('Ahora el segundo')
+var number2 = prompt('Ahora el segundo')
 if (isNaN(parseInt(number2))) 
     alert('No es un numero.....')
 
