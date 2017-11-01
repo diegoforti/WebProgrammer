@@ -91,7 +91,7 @@ Movie.prototype.setActor = function (actor) {
 
 Movie.prototype.showMovie = function () {
     alert(' Pelicula: ' + this.title 
-        + '\n Estreno: ' + this.year 
+        + '\n Año de estreno: ' + this.year 
         + '\n Director: ' + this.director 
         + '\n Actores: ' + this.getActor(0) + ', ' + this.getActor(1))
 }

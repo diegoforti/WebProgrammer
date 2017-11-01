@@ -1,5 +1,4 @@
-days = ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado']
-
+var days = ['Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado']
 //Ejercicios
 
 // for (var index = 0; index < days.length; index++) {
