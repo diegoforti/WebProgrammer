@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <!-- Boostrap 4 -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    
+    <title>Document</title>
+</head>
+<body>
+    <div id="container" class="container" >
+        <h3 class="text-center">Movies</h3>
+
+ <div class="row">   
+     
+    <div class="col-sm-6">
+
+        <div class="row">
+            <div class="form-group">
+                <form>
+                    <label for="inputTitle">Id:</label>
+                    <input type="text" class="form-control" name="inputId" id="inputId">
+    
+                    <label for="inputTitle">Title:</label>
+                    <input type="text" class="form-control" name="inputTitle" id="inputTitle">
+                    
+                    <label for="inputYear">Year:</label>
+                    <input type="number" class="form-control" name="inputYear" id="inputYear">
+                    
+                    <label for="inputDirector">Director:</label>
+                    <input type="text" class="form-control" name="inputDirector" id="inputDirector">
+                    
+                    <label for="firstActor">1st. Actor:</label>
+                    <input type="text" class="form-control" name="firstActor" id="firstActor">
+                    
+                    <label for="secondActor">2nd. Actor:</label>
+                    <input type="text" class="form-control" name="secondActor" id="secondActor">
+                    
+                </form>
+            </div>
+        </div>            
+        
+        <div class="row">
+            <div>
+                <button id="buttonAdd" class="btn btn-info">Add Movie</button>
+                <button id="buttonDelete" class="btn btn-info">Delete by Id</button>       
+            </div>            
+        </div>
+
+    </div>
+
+    <div class="col-sm-6">
+            <div id="listMovies"></div>                    
+    </div>
+
+</div>
+        
+    </div>
+    
+    <script src="./js/moduleMovie.js"></script>
+    
+    <script>
+
+        var buttonAdd = document.getElementById('buttonAdd')
+        buttonAdd.onclick = function (e) {      
+            e.preventDefault();              
+            ModuleMovie.createMovie('listMovies', document.getElementById('inputTitle').value
+            , document.getElementById('inputYear').value
+            , document.getElementById('inputDirector').value
+            , document.getElementById('firstActor').value
+            , document.getElementById('secondActor').value)
+        }
+            
+        var buttonDelete = document.getElementById('buttonDelete')
+        buttonDelete.onclick = function (e) {      
+            e.preventDefault();              
+            var idDelete = document.getElementById('inputId').value
+            ModuleMovie.deleteMovie(idDelete)
+        }
+        
+        
+
+
+
+
+
+// var listMovies = []
+// ModuleMovie.createMovie(listMovies)
+// ModuleMovie.showAll(listMovies)
+
+
+    </script>
+</body>
+</html>
