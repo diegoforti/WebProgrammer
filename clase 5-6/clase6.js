@@ -22,12 +22,9 @@ function saveNameLocalStorage(studentName) {
 function removeNameLocalStorage (studentName) {
     var temporalList = localStorage.getItem('savedList') || []
 
-    if (temporalList.length === 0 ) {
-        return
-    }
+    if (temporalList.length === 0 ) return
 
     temporalList = JSON.parse(temporalList)
-    console.log(temporalList)
 
     var studentIndex = searchStudentPro(studentName, temporalList)
     if (studentIndex !== false) temporalList.splice(studentIndex, 1)
@@ -37,6 +34,6 @@ function removeNameLocalStorage (studentName) {
     
 } 
 
-// saveNameLocalStorage('ROBERTO')
+saveNameLocalStorage('ROBERTO')
 
- removeNameLocalStorage('CARLOS')
+removeNameLocalStorage('CARLOS')
