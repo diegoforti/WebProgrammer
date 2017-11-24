@@ -114,36 +114,61 @@ var ModuleStudent = (function() {
             var encontrados = []
             var ul = document.getElementById('ulList')
             value = _removeDiacritics(value)
+
+        //Esta opcion permite la busqueda mediante LI utilizando css display
+            var listLi = ul.getElementsByTagName('li');
             
-            var temporalList = localStorage.getItem('savedList') || []
-            if (temporalList.length !==  0) {
-                temporalList = JSON.parse(temporalList)
+            for (var index = 0; index < listLi.length; index++) {
+                var li = listLi[index]
+                var h1 = li.getElementsByTagName('h1')[0];
+                var p = li.getElementsByTagName('p')[0];
+                var span = li.getElementsByTagName('span')[0];
 
-                for (var index = 0; index < temporalList.length; index++) {
-                    var element = temporalList[index];
+                h1 = _removeDiacritics(h1.innerText)
+                p = _removeDiacritics(p.innerText)
+                span = _removeDiacritics(span.innerText)
 
-                    var firstName = _removeDiacritics(element.firstName)
-                    var lastName = _removeDiacritics(element.lastName)
-                    var email = _removeDiacritics(element.email)
-
-                    if (firstName.includes(value) || lastName.includes(value) 
-                            || element.dni.includes(value) || email.includes(value)) {                   
-                        encontrados.push(element)
-                    } 
+                if (h1.indexOf(value) > -1 
+                    || p.indexOf(value) > -1 
+                    || span.indexOf(value) > -1) {
+                    li.style.display = "";
+                } else {
+                    li.style.display = "none";
                 }
-            }
+            }  
 
-            if (encontrados.length > 0) {
-                document.getElementById('ulList').remove()
-                for (var index = 0; index < encontrados.length; index++) {
-                    var element = encontrados[index];
 
-                    var ul = _createUL(element.firstName, element.lastName, element.dni, element.email)
-                    var container = document.getElementById('contentList')
-                    container.appendChild(ul)
+        //Esta opcion, comentada abajo permite buscar desde el localstorage
+            
+            // var temporalList = localStorage.getItem('savedList') || []
+            // if (temporalList.length !==  0) {
+            //     temporalList = JSON.parse(temporalList)
+
+            //     for (var index = 0; index < temporalList.length; index++) {
+            //         var element = temporalList[index];
+
+            //         var firstName = _removeDiacritics(element.firstName)
+            //         var lastName = _removeDiacritics(element.lastName)
+            //         var email = _removeDiacritics(element.email)
+
+            //         if (firstName.includes(value) || lastName.includes(value) 
+            //                 || element.dni.includes(value) || email.includes(value)) {                   
+            //             encontrados.push(element)
+            //         } 
+            //     }
+            // }
+
+            // if (encontrados.length > 0) {
+            //     document.getElementById('ulList').remove()
+            //     for (var index = 0; index < encontrados.length; index++) {
+            //         var element = encontrados[index];
+
+            //         var ul = _createUL(element.firstName, element.lastName, element.dni, element.email)
+            //         var container = document.getElementById('contentList')
+            //         container.appendChild(ul)
                     
-                }
-            }
+            //     }
+            // }
         }
 
         function _saveNameLocalStorage(firstName, lastName, dni, email) {
