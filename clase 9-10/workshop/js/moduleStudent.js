@@ -111,10 +111,9 @@ var ModuleStudent = (function() {
     
         function _search(value){         
             
-            var encontrados = []
             var ul = document.getElementById('ulList')
             value = _removeDiacritics(value)
-
+            
         //Esta opcion permite la busqueda mediante LI utilizando css display
             var listLi = ul.getElementsByTagName('li');
             
@@ -123,23 +122,24 @@ var ModuleStudent = (function() {
                 var h1 = li.getElementsByTagName('h1')[0];
                 var p = li.getElementsByTagName('p')[0];
                 var span = li.getElementsByTagName('span')[0];
-
+                
                 h1 = _removeDiacritics(h1.innerText)
                 p = _removeDiacritics(p.innerText)
                 span = _removeDiacritics(span.innerText)
-
+                
                 if (h1.indexOf(value) > -1 
-                    || p.indexOf(value) > -1 
-                    || span.indexOf(value) > -1) {
+                || p.indexOf(value) > -1 
+                || span.indexOf(value) > -1) {
                     li.style.display = "";
                 } else {
                     li.style.display = "none";
                 }
             }  
-
-
+            
+            
         //Esta opcion, comentada abajo permite buscar desde el localstorage
             
+            // var encontrados = []
             // var temporalList = localStorage.getItem('savedList') || []
             // if (temporalList.length !==  0) {
             //     temporalList = JSON.parse(temporalList)
