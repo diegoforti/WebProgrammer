@@ -1,0 +1,12 @@
+.classTitle {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.listContainer {
+  width: 95%;
+  margin: 30px auto;
+}
+li {
+  cursor: pointer;
+}
