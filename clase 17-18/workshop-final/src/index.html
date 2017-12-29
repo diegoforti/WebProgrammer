@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="tab icon" href="./favicon.png">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">      
+    <link rel="stylesheet" href="styles/icons/font-awesome.css">
+    <link rel="stylesheet" href="styles/icons/font-awesome.min.css">
+    <title>Workshop final</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <a class="navbar-brand" href="index.html">
+            <img src="./images/light-saber.png" width="30" height="30" class="d-inline-block align-top" alt="">
+            <span class="text-warning">Star Wars API interface</span>
+        </a>
+
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup"></div>
+            <div class="navbar-nav spaceAround">
+                <a class="nav-item nav-link text-warning" href="#" id="navbarSavedPeopleButton">Personajes guardados</a>
+                <a class="nav-item nav-link text-warning" href="#" id="navbarAllPeopleButton">Todos los personajes</a>
+            </div>
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Luke Skywalker" aria-label="Search" id="inputSearch">
+                <button class="btn btn-outline-warning my-2 my-sm-0" type="button" id="searchPerson">Buscar personaje</button>
+            </form>
+        </div>
+    </nav>
+
+    <div id="loader"class='text-center' style="display:none; margin-top: 5%;"> <i class='fa fa-cog fa-spin fa-3x fa-fw' style='color:white'></i></div>
+    <div class="mainContainer" id="mainContainer" ></div>
+
+    </div>
+
+
+    <!-- jQuery -->
+    <!-- <script src="./js/jquery-3.2.1.min.js"></script> -->
+    <script src="./js/jquery-3.2.1.js"></script>
+    
+    <!-- Boostrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+        
+    <!-- Mi js -->
+    <script src="./js/ajax.js"></script>
+    <script src="./js/localStorageSWAPI.js"></script>
+    <script src="./js/tableManager.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/translate.js"></script>
+</body>
+
+</html>
